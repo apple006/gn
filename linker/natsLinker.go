@@ -92,9 +92,6 @@ func (nl *natsLinker) natsReconnectHandler(con *nats.Conn) {
 	})
 }
 
-func (nl *natsLinker) GetConnection() interface{} {
-	return nl.natsC
-}
 func (nl *natsLinker) Run() error {
 	if nl.natsC == nil && !nl.isRuning {
 		var address string

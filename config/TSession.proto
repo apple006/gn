@@ -21,6 +21,11 @@ message TSession {
 }
 
 
+service GrpcNodeService {
+  rpc PushPack (stream TSession) returns (stream TSession);
+  rpc RequestRPCPack ( TSession) returns (TSession);
+}
+
 message CmdMsg {
   int64 runRoutineNum =1;
   bytes data =2;
